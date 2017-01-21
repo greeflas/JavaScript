@@ -57,12 +57,28 @@
 // }
 
 /* division table */
-var output = '';
-for (var i = 2; i < 11; i++) {
-    for (var j = 2; j < 11; j++) {
-        output += (i * j) + '\t';
-    }
-    output += '\n';
-}
+//var output = '';
+//for (var i = 2; i < 11; i++) {
+//    for (var j = 2; j < 11; j++) {
+//        output += (i * j) + '\t';
+//    }
+//    output += '\n';
+//}
+//
+//console.log(output);
 
-console.log(output);
+/* Simple numbers */
+var n = prompt('Input a number', '');
+for (var i = 0; i < n; i++) {
+    var isSimple = true;
+    for (var j = 0; j < i; j++) {
+        if ((i % j == 0) && (j != i) && (j != 1)) {
+            isSimple = false;
+            break;
+        }
+    }
+    
+    if (isSimple) {
+        console.log(i);
+    }
+}
