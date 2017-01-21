@@ -77,7 +77,7 @@ for (var i = 0; i < n; i++) {
             break;
         }
     }
-    
+
     if (isSimple) {
         console.log(i);
     }
