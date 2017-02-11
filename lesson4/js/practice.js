@@ -13,3 +13,28 @@ for (var i = 0; i < li.length; i++) {
     console.log("<li> value: " + li[i].firstChild.data.trim());
     console.log("<li> count: " + current.length);
 }
+
+// Task 3
+function show() {
+    var protocols = [
+        'http://',
+        'ftp://',
+        'tcp://'
+    ];
+
+    var links = document.querySelectorAll('li > a');
+    for (var i = 0; i < links.length; i++) {
+        var link = links[i].getAttribute('href');
+        var has = false;
+        for (var j = 0; j < protocols.length; j++) {
+            if (link.indexOf(protocols[j]) != -1) {
+                has = true;
+                break;
+            }
+        }
+
+        if (has) {
+            links[i].classList.toggle('text-danger');
+        }
+    }
+}
