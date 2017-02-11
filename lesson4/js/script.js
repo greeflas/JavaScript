@@ -69,3 +69,25 @@ console.log(byId.matches('#message'));
 
 // return first parent with "body" selector
 console.log(byId.closest('body'));
+
+/* Attributes */
+var attr = document.getElementById('attr');
+
+// return all attributes
+console.log(attr.attributes);
+console.log(attr.attributes[0].name);
+console.log(attr.attributes[0].value);
+
+// check is element has attribute
+console.log(attr.hasAttribute('myAttribute'));
+
+// get attribute value
+console.log(attr.getAttribute('myAttribute'));
+
+// set new value for attribute
+attr.setAttribute('myAttribute', 'new value');
+console.log(attr.getAttribute('myAttribute'));
+
+// remove attribute
+attr.removeAttribute('myAttribute');
+console.log(attr.getAttribute('myAttribute'));
