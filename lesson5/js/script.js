@@ -26,3 +26,27 @@ function timer() {
 }
 
 var myTimer = timer();
+
+function buffer () {
+    var buffer = '';
+    var bufferizer = function (piece) {
+        if (piece) {
+            buffer += piece;
+        }
+        else {
+            return buffer;
+        }
+    }
+    bufferizer.clear = function (cutLength) {
+        if (cutLength && !isNaN(cutLength)) {
+            buffer = buffer.slice(0, buffer.length - cutLength);
+        }
+        else {
+            buffer = '';
+        }
+    }
+
+    return bufferizer;
+}
+
+var buf = buffer();
